@@ -6,6 +6,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.list = true -- show tab characters and trailing whitespace
+vim.opt.signcolumn = "yes" -- always show the sign column (used with lsps to show errors and warnings
 
 vim.opt.ignorecase = true -- ignore case when searching
 vim.opt.smartcase = true -- unless capital letter in search

@@ -37,10 +37,45 @@ require("lazy").setup({
   { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    branch = 'master',
+    lazy = false,
+    build = ":TSUpdate",
+  },
+
+  {
+    "mason-org/mason.nvim",
+    opts = {},
+  },
+
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "ts_ls", "prismals" },
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
+
+  {
     "terrortylor/nvim-comment",
     config = function()
       require("nvim_comment").setup({ create_mappings = false })
     end
   },
 
+})
+
+require("nvim-treesitter.configs").setup({
+  ensure_installed = { "typescript", "tsx", "javascript", "html", "css", "prisma" },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true
+  },
 })
