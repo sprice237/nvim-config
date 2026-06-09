@@ -12,7 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- color scheme
+  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "EdenEast/nightfox.nvim" },
 
   -- telescope
   {
@@ -32,6 +34,14 @@ require("lazy").setup({
       require("nvim-tree").setup {
         update_focused_file = {
           enable = true,
+        },
+        view = {
+          preserve_window_proportions = true
+        },
+        actions = {
+          open_file = {
+            resize_window = false,
+          }
         }
       }
     end,

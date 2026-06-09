@@ -1,3 +1,6 @@
+vim.opt.equalalways = false -- avoid losing custom pane resizing when opening windows
+vim.wo.wrap = false
+
 vim.opt.nu = true -- enable line numbers
 vim.opt.relativenumber = true -- relative line numbers
 vim.opt.tabstop = 2
